@@ -54,13 +54,12 @@ jobs:
       run: | 
         cd $PUBLISH_DIR
         pwd 
-        ls -la 
-        git init 
-        git config --global init.defaultBranch master 
+        ls -la  
+        git config --local init.defaultBranch master 
         git config --local user.name $USER_NAME
         git config --local user.email $USER_EMAIL
-        git status
-        git remote add origin https://hyes92121:$GITHUB_TOKEN@github.com/hyes92121.github.io
+        git init
+        git remote set-url --push origin https://hyes92121:$GITHUB_TOKEN@github.com/hyes92121.github.io
         git checkout -b gh-pages
         git add --all 
         git commit -m "Push to gh-pages branch by Github Actions Job ID: $GITHUB_ACTION"
