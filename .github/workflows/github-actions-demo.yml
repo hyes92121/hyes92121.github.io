@@ -54,10 +54,10 @@ jobs:
       run: | 
         cd $PUBLISH_DIR
         ls -la  
-        git config --local init.defaultBranch master 
+        git config --global init.defaultBranch master 
+        git init
         git config --local user.name $USER_NAME
         git config --local user.email $USER_EMAIL
-        git init
         git remote set-url --push origin https://hyes92121:$GITHUB_TOKEN@github.com/hyes92121.github.io
         git checkout -b gh-pages
         git add --all 
