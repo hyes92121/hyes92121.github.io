@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import tera from './tera.png'
 import './App.css';
 
