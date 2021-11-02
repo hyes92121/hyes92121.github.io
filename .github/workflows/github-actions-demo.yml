@@ -54,6 +54,7 @@ jobs:
     
     - name: 🛫 Deploy to gh-pages branch 🛫 
       run: | 
+        echo Hello $GITHUB_SERVER_URL
         cd $PUBLISH_DIR
         git config --global user.name $USER_NAME
         git config --global user.email $USER_EMAIL
