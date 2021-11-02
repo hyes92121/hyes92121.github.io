@@ -53,13 +53,24 @@ jobs:
     - name: 🛫 Deploy to gh-pages branch 🛫 
       run: | 
         cd $PUBLISH_DIR
-        ls -la  
+        echo $?
+        ls -la 
+        echo $? 
         git config --global init.defaultBranch master 
+        echo $?
         git init
+        echo $?
         git config --local user.name $USER_NAME
+        echo $?
         git config --local user.email $USER_EMAIL
+        echo $?
         git remote set-url --push origin https://hyes92121:$GITHUB_TOKEN@github.com/hyes92121.github.io
+        echo $?
         git checkout -b gh-pages
+        echo $?
         git add --all 
+        echo $?
         git commit -m "Push to gh-pages branch by Github Actions Job ID: $GITHUB_ACTION"
+        echo $?
         git push origin gh-pages -f
+        echo $?
