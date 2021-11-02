@@ -51,7 +51,7 @@ jobs:
     
     - name: 🛫 Deploy to gh-pages branch 🛫 
       run: | 
-        cd $PUBLISH_DIR
+        # cd $PUBLISH_DIR
         ls -la 
         git init 
         git config --local user.name $USER_NAME
