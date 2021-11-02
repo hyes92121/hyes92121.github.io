@@ -40,8 +40,8 @@ jobs:
     runs-on: ubuntu-latest 
     if: github.ref == 'refs/heads/master'
     env:
-      USER_NAME: hyes92121
-      USER_EMAIL: hyes92121@gmail.com 
+      USER_NAME: Github Action 
+      USER_EMAIL: action@github.com 
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       PUBLISH_DIR: build 
 
@@ -59,7 +59,7 @@ jobs:
         git config --global user.name $USER_NAME
         git config --global user.email $USER_EMAIL
         git init
-        git remote add origin https://hyes92121:$GITHUB_TOKEN@github.com/hyes92121.github.io
+        git remote set-url origin https://hyes92121:$GITHUB_TOKEN@github.com/hyes92121.github.io
         git checkout -b gh-pages
         git add --all 
         git commit -m "Push to gh-pages branch by Github Actions Job ID: $GITHUB_ACTION"
