@@ -54,9 +54,9 @@ jobs:
     
     - name: 🛫 Deploy to gh-pages branch 🛫 
       run: | 
-        echo -> $GITHUB_SERVER_URL
-        echo -> $GITHUB_TOKEN
-        echo -> $GITHUB_REPOSITORY
+        echo "-> $GITHUB_SERVER_URL"
+        echo "-> $GITHUB_TOKEN"
+        echo "-> $GITHUB_REPOSITORY"
         cd $PUBLISH_DIR
         git config --global user.name $USER_NAME
         git config --global user.email $USER_EMAIL
