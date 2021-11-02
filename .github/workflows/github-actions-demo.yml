@@ -60,5 +60,5 @@ jobs:
         git remote add origin https://hyes92121:$GITHUB_TOKEN@github.com/hyes92121.github.io
         git checkout -b gh-pages
         git add --all
-        git commit -m "Push to gh-pages branch by Github Actions Job ID: ${{ GITHUB_ACTION }}"
+        git commit -m "Push to gh-pages branch by Github Actions Job ID: $GITHUB_ACTION"
         git push origin gh-pages -f
