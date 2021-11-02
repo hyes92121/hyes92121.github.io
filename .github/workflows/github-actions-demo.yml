@@ -26,7 +26,7 @@ jobs:
         run: npm ci
       
       - name: 🛠️ Build project 🛠️
-        run: npm build run 
+        run: npm run build 
       
       - name: 🖥️ Upload build files 🖥️
         uses: actions/upload-artifact@v2
