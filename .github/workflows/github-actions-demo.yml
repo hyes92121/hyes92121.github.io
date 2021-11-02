@@ -54,17 +54,13 @@ jobs:
     
     - name: 🛫 Deploy to gh-pages branch 🛫 
       run: | 
-        echo "-> $GITHUB_SERVER_URL"
-        echo "-> $GITHUB_TOKEN"
-        echo "-> $GITHUB_REPOSITORY"
         cd $PUBLISH_DIR
         git config --global user.name $USER_NAME
         git config --global user.email $USER_EMAIL
         git init
         git remote add origin https://x-access-token:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY
-        git remote -v 
         git checkout -b gh-pages
         git add --all 
-        git commit -m "Push to gh-pages branch by Github Actions Job ID: $GITHUB_ACTION"
+        git commit -m "Push to gh-pages branch by Github Actions Run ID: $GITHUB_RUN_ID"
         git push origin gh-pages -f
          
