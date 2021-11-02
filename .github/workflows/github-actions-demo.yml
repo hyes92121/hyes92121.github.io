@@ -40,6 +40,8 @@ jobs:
     runs-on: ubuntu-latest 
     if: github.ref == 'refs/heads/master'
     env:
+      USER_NAME: hyes92121
+      USER_EMAIL: hyes92121@gmail.com 
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       PUBLISH_DIR: build 
 
@@ -53,24 +55,13 @@ jobs:
     - name: 🛫 Deploy to gh-pages branch 🛫 
       run: | 
         cd $PUBLISH_DIR
-        echo $?
         ls -la 
-        echo $? 
-        git config --global init.defaultBranch master 
-        echo $?
+        git config --global user.name $USER_NAME
+        git config --global user.email $USER_EMAIL
         git init
-        echo $?
-        git config --local user.name $USER_NAME
-        echo $?
-        git config --local user.email $USER_EMAIL
-        echo $?
         git remote set-url --push origin https://hyes92121:$GITHUB_TOKEN@github.com/hyes92121.github.io
-        echo $?
         git checkout -b gh-pages
-        echo $?
         git add --all 
-        echo $?
         git commit -m "Push to gh-pages branch by Github Actions Job ID: $GITHUB_ACTION"
-        echo $?
         git push origin gh-pages -f
-        echo $?
+         
