@@ -54,6 +54,7 @@ jobs:
       run: | 
         cd $PUBLISH_DIR
         ls -la 
+        git config --global init.defaultBranch master 
         git init 
         git config --local user.name $USER_NAME
         git config --local user.email $USER_EMAIL
