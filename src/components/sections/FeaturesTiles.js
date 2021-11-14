@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames';
 import { SectionTilesProps } from '../../utils/SectionProps';
 import SectionHeader from './partials/SectionHeader';
 import Image from '../elements/Image';
+import Modal from '../elements/Modal';
+
+import icon1 from '../../assets/images/laco.png'
+import icon2 from '../../assets/images/billy.png'
+import icon3 from '../../assets/images/vincent.png'
+import icon4 from '../../assets/images/tera.png'
 
 const propTypes = {
   ...SectionTilesProps.types
@@ -22,6 +28,23 @@ const FeaturesTiles = ({
   pushLeft,
   ...props
 }) => {
+
+  const [videoModalActive, setVideomodalactive] = useState({
+    lacoVid: false,
+    billyVid: false, 
+    vincentVid: false, 
+    teraVid: false 
+  });
+
+  const openModal = (e, id) => {
+    e.preventDefault();
+    setVideomodalactive({...videoModalActive, [id]: true });
+  }
+
+  const closeModal = (e, id) => {
+    e.preventDefault();
+    setVideomodalactive({...videoModalActive, [id]: false });
+  }   
 
   const outerClasses = classNames(
     'features-tiles section',
@@ -44,9 +67,12 @@ const FeaturesTiles = ({
   );
 
   const sectionHeader = {
-    title: 'Build up the whole picture',
-    paragraph: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum — semper quis lectus nulla at volutpat diam ut venenatis.'
+    title: 'Below are my friends',
+    paragraph: "Good friends, I might add. They are a bit weird, but hey, beggers can't be choosers, right?" 
   };
+
+  const WIDTH = 256 
+  const HEIGHT = 256 
 
   return (
     <section
@@ -63,19 +89,25 @@ const FeaturesTiles = ({
                 <div className="features-tiles-item-header">
                   <div className="features-tiles-item-image mb-16">
                     <Image
-                      src={require('./../../assets/images/feature-tile-icon-01.svg')}
+                      src={icon1}
                       alt="Features tile icon 01"
-                      width={64}
-                      height={64} />
+                      width={WIDTH}
+                      height={HEIGHT} />
                   </div>
                 </div>
                 <div className="features-tiles-item-content">
                   <h4 className="mt-0 mb-8">
-                    Robust Workflow
-                    </h4>
+                    Laco "X-ray" Luo
+                  </h4>
                   <p className="m-0 text-sm">
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat.
-                    </p>
+                    His childhood dream is to become <a href="#0" onClick={e=>openModal(e, 'lacoVid')} style={{'text-decoration': 'underline #FFF'}}>ULTRA-MAN</a>.
+                    <Modal
+                      id="video-modal"
+                      show={videoModalActive.lacoVid}
+                      handleClose={e=>closeModal(e, 'lacoVid')}
+                      video="https://www.youtube.com/embed/BQ7ZNrBFszA?start=243&end=250&autoplay=1"
+                      videoTag="iframe" />
+                  </p>
                 </div>
               </div>
             </div>
@@ -85,19 +117,25 @@ const FeaturesTiles = ({
                 <div className="features-tiles-item-header">
                   <div className="features-tiles-item-image mb-16">
                     <Image
-                      src={require('./../../assets/images/feature-tile-icon-02.svg')}
+                      src={icon2}
                       alt="Features tile icon 02"
-                      width={64}
-                      height={64} />
+                      width={WIDTH}
+                      height={HEIGHT} />
                   </div>
                 </div>
                 <div className="features-tiles-item-content">
                   <h4 className="mt-0 mb-8">
-                    Robust Workflow
-                    </h4>
+                    Chris "<a href="#0" onClick={e=>openModal(e, 'billyVid')} style={{'text-decoration': 'underline #FFF'}}>Kachow</a>" Lin
+                    <Modal
+                      id="video-modal"
+                      show={videoModalActive.billyVid}
+                      handleClose={e=>closeModal(e, 'billyVid')}
+                      video="https://www.youtube.com/embed/w9ioRZdYuD4?start=23&end=25&autoplay=1"
+                      videoTag="iframe" />
+                  </h4>
                   <p className="m-0 text-sm">
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat.
-                    </p>
+                    Often mistakenly being called Billy, but hasn't had the faintest idea why. 
+                  </p>
                 </div>
               </div>
             </div>
@@ -107,19 +145,19 @@ const FeaturesTiles = ({
                 <div className="features-tiles-item-header">
                   <div className="features-tiles-item-image mb-16">
                     <Image
-                      src={require('./../../assets/images/feature-tile-icon-03.svg')}
+                      src={icon3}
                       alt="Features tile icon 03"
-                      width={64}
-                      height={64} />
+                      width={WIDTH}
+                      height={HEIGHT} />
                   </div>
                 </div>
                 <div className="features-tiles-item-content">
                   <h4 className="mt-0 mb-8">
-                    Robust Workflow
+                    Vincent "臉紅紅" Han
                     </h4>
                   <p className="m-0 text-sm">
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat.
-                    </p>
+                    Ryan's homie. The picture above is actually Ryan. Vincent likes to prank his friends, and I think this says a lot about his character (not in a good way, per se). 
+                  </p>
                 </div>
               </div>
             </div>
@@ -129,66 +167,28 @@ const FeaturesTiles = ({
                 <div className="features-tiles-item-header">
                   <div className="features-tiles-item-image mb-16">
                     <Image
-                      src={require('./../../assets/images/feature-tile-icon-04.svg')}
+                      src={icon4}
                       alt="Features tile icon 04"
-                      width={64}
-                      height={64} />
+                      width={WIDTH}
+                      height={HEIGHT} />
                   </div>
                 </div>
                 <div className="features-tiles-item-content">
                   <h4 className="mt-0 mb-8">
-                    Robust Workflow
+                    Tera "T-REX" Cheng
                     </h4>
                   <p className="m-0 text-sm">
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat.
-                    </p>
+                    Goes by a great number of names like "Beauty Fairy", "嗡", "哞", but one I think suits her best is "Oviraptor", a.k.a, the <a href="#0" onClick={e=>openModal(e, 'teraVid')} style={{'text-decoration': 'underline #FFF'}}>egg stealing dinosuar</a>.  
+                    <Modal
+                      id="video-modal"
+                      show={videoModalActive.teraVid}
+                      handleClose={e=>closeModal(e, 'teraVid')}
+                      video="https://www.youtube.com/embed/wrvwlBA03PA?start=13&end=16&autoplay=1"
+                      videoTag="iframe" />
+                  </p>
                 </div>
               </div>
-            </div>
-
-            <div className="tiles-item reveal-from-bottom" data-reveal-delay="200">
-              <div className="tiles-item-inner">
-                <div className="features-tiles-item-header">
-                  <div className="features-tiles-item-image mb-16">
-                    <Image
-                      src={require('./../../assets/images/feature-tile-icon-05.svg')}
-                      alt="Features tile icon 05"
-                      width={64}
-                      height={64} />
-                  </div>
-                </div>
-                <div className="features-tiles-item-content">
-                  <h4 className="mt-0 mb-8">
-                    Robust Workflow
-                    </h4>
-                  <p className="m-0 text-sm">
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat.
-                    </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="tiles-item reveal-from-bottom" data-reveal-delay="400">
-              <div className="tiles-item-inner">
-                <div className="features-tiles-item-header">
-                  <div className="features-tiles-item-image mb-16">
-                    <Image
-                      src={require('./../../assets/images/feature-tile-icon-06.svg')}
-                      alt="Features tile icon 06"
-                      width={64}
-                      height={64} />
-                  </div>
-                </div>
-                <div className="features-tiles-item-content">
-                  <h4 className="mt-0 mb-8">
-                    Robust Workflow
-                    </h4>
-                  <p className="m-0 text-sm">
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat.
-                    </p>
-                </div>
-              </div>
-            </div>
+            </div> 
 
           </div>
         </div>

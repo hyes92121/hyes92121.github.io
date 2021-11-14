@@ -6,7 +6,7 @@ import Button from '../elements/Button';
 import Image from '../elements/Image';
 import Modal from '../elements/Modal';
 
-import videoPlaceHolder from '../../assets/images/vincent.jpg'
+import videoPlaceHolder from '../../assets/images/laco.png'
 
 const propTypes = {
   ...SectionProps.types
@@ -60,7 +60,7 @@ const Hero = ({
         <div className={innerClasses}>
           <div className="hero-content">
             <h1 className="mt-0 mb-16 reveal-from-bottom" data-reveal-delay="200">
-              This is <span className="text-color-primary">Tera</span> Wang
+              This is <span className="text-color-primary">Caleb</span> "Jacky" Wang
             </h1>
             <div className="container-xs">
               <p className="m-0 mb-32 reveal-from-bottom" data-reveal-delay="400">
