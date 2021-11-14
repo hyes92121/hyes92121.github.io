@@ -7,7 +7,6 @@ import Image from '../elements/Image';
 import Modal from '../elements/Modal';
 
 import videoPlaceHolder from '../../assets/images/video-placeholder.jpg'
-import test from '../../assets/images/feature-tile-icon-06.svg'
 
 const propTypes = {
   ...SectionProps.types
