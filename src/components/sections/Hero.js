@@ -71,10 +71,10 @@ const Hero = ({
               <div className="reveal-from-bottom" data-reveal-delay="600">
                 <ButtonGroup>
                   <Button tag="a" color="dark" wideMobile href="http://cc.ee.ntu.edu.tw/~farn//">
-                    Fuck him 
+                    Speak to him in person
                   </Button>
                   <Button tag="a" color="primary" wideMobile href="https://lacoluo.github.io">
-                    Fuck him HARD! 
+                    Leave him alone 
                   </Button>
                 </ButtonGroup>
               </div>
