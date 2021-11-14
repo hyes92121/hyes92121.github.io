@@ -134,7 +134,7 @@ const FeaturesTiles = ({
                       videoTag="iframe" />
                   </h4>
                   <p className="m-0 text-sm">
-                    Often mistakenly being called Billy, but hasn't had the faintest idea why. 
+                    Often being mistakenly called Billy, but hasn't had the faintest idea why. 
                   </p>
                 </div>
               </div>
@@ -157,6 +157,7 @@ const FeaturesTiles = ({
                     </h4>
                   <p className="m-0 text-sm">
                     Ryan's homie. The picture above is actually Ryan. Vincent likes to prank his friends, and I think this says a lot about his character (not in a good way, per se). 
+                    See the sneaky smile on the upper-right corner of the picture? That's Vincent. Gotcha 😏😏
                   </p>
                 </div>
               </div>
