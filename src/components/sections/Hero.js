@@ -5,8 +5,10 @@ import ButtonGroup from '../elements/ButtonGroup';
 import Button from '../elements/Button';
 import Image from '../elements/Image';
 import Modal from '../elements/Modal';
+import TextSlider from '../elements/TextSlider';
+import Phoebe from '../elements/Phoebe';
 
-import videoPlaceHolder from '../../assets/images/laco.png'
+import videoPlaceHolder from '../../assets/images/caspian.jpg'
 
 const propTypes = {
   ...SectionProps.types
@@ -37,7 +39,7 @@ const Hero = ({
   const closeModal = (e) => {
     e.preventDefault();
     setVideomodalactive(false);
-  }   
+  }
 
   const outerClasses = classNames(
     'hero section center-content',
@@ -61,12 +63,15 @@ const Hero = ({
           <div className="hero-content">
             <h1 className="mt-0 mb-16 reveal-from-bottom" data-reveal-delay="200">
               This is <span className="text-color-primary">Caleb</span> "Jacky" Wang
+              <br />
+              <TextSlider tag="a" color="primary" wideMobile>Test</TextSlider>
             </h1>
+            <Phoebe />
             <div className="container-xs">
               <p className="m-0 mb-32 reveal-from-bottom" data-reveal-delay="400">
                 I am still learning how to create my own website. I also want to go to UCLA with my friend Laco.
                 But he is souring, which is making me uncomfortable. <br />
-                Choose below the actions you would take to treat Laco: 
+                Choose below the actions you would take to treat Laco:
               </p>
               <div className="reveal-from-bottom" data-reveal-delay="600">
                 <ButtonGroup>
@@ -74,7 +79,7 @@ const Hero = ({
                     Speak to him in person
                   </Button>
                   <Button tag="a" color="primary" wideMobile href="https://lacoluo.github.io">
-                    Leave him alone 
+                    Leave him alone
                   </Button>
                 </ButtonGroup>
               </div>
